@@ -1,3 +1,10 @@
 = Server: GitSCM
 
 This vagrant server provides GIT SCM functionality to the public network.
+
+== Requirements
+
+* vagrant
+* puppet
+* librarian-puppet
+
