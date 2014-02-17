@@ -2,9 +2,48 @@
 
 This vagrant server provides GIT SCM functionality to the public network.
 
-== Requirements
+== Installation
 
-* vagrant
-* puppet
-* librarian-puppet
+If you're attempting to boot this machine up from scratch, there are a few
+things that need to be present and configured on your machine. This readme
+assumes you're using windows. I imagine Linux is actually easier to do this
+in.
+
+=== Vagrant
+
+If you don't already have Vagrant installed, go get it at:
+http://www.vagrantup.com/downloads.html
+
+Make sure the vagrant binaries are on your PATH, and VAGRANT_HOME points toward your user directory, eg: `SET VAGRANT_HOME=%USER_HOME%\.vagrant.d` or similar.
+
+=== Puppet
+
+This box uses puppet to provision the virtual machine, so you'll need it
+installed locally as well as on the base box. Download it from here:
+http://info.puppetlabs.com/download-puppet-open-source
+
+However you get it working, you need to have puppet fully available in a
+console environment for the next step to work. The easiest way of doing this is
+to just use the "Start Command Prompt with Puppet" shortcut that the installer
+creates for you, and go from there.
+
+=== librarian-puppet
+
+To get all the module dependencies worked out, you'll need to get
+librarian-puppet set up to manage them. The documentation for setting it up is
+available here: http://librarian-puppet.com/
+
+All you really need to know, however, is that while in the puppet shell
+mentioned above, just execute `gem install librarian-puppet` and then when in
+the "puppet" directory of the project, execute `librarian-puppet install`.
+
+The more astute of you may have noticed that there's no ruby install step
+included in this guide. Thankfully the only reason you'll need ruby is when
+performing this step, so you can just use the version that comes bundled with
+Puppet.
+
+== Configuration
+
+Unfortunately, I haven't figured this particular part out yet. I guess I'll
+update this readme when I've got something more concrete.
 
