@@ -3,5 +3,7 @@ forge "http://forge.puppetlabs.com"
 mod 'puppetlabs/stdlib'
 mod 'puppetlabs/apt'
 
-mod 'puppet-gerrit',
-	:git => 'git://github.com/reinsle/puppet-gerrit.git'
+mod 'example42/puppi'
+
+mod 'gerrit',
+	:git => 'git://github.com/DavidS/puppet-gerrit.git'

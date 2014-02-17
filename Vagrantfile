@@ -3,7 +3,7 @@
 Vagrant.configure('2') do |config|
 	config.vm.box = 'ubuntu64'
 	config.vm.box_url = 'http://goo.gl/Y4aRr'
-	config.vm.network :forwarded_port, guest: 80, host: 4239
+	config.vm.network 'public_network', :use_dhcp_assigned_default_route => true
 	config.vm.hostname = 'gitscm'
 
 	config.vm.provider :virtualbox do |vb|
