@@ -16,6 +16,23 @@ class gitscm {
 		gerrit_java_home => "/usr/lib/jvm/java-7-openjdk-${::architecture}/jre"
 	}
 
+
+	include apache
+	include apache::mod::proxy
+	include apache::mod::proxy_http
+
+	apache::vhost { '*':
+		port => '80',
+		proxy_dest => 'http://localhost:8080/'
+		proxy_pass => [
+			{
+				'path' => '/gerrit',
+				'url'  => 'http://localhost:8080'
+			}
+		],
+		custom_fragment => ''
+	}
+
 }
 
 include gitscm
